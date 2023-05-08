@@ -6,4 +6,4 @@
 1. Create build directory
 2. Run "cmake -S *source_directory* -B *build_directory*" command to build project
 3. Go to *build_directory* and run "make" command to compile project
-4. The result of the compilation will be executable *test* file
+4. The result of the compilation will be executable *task* file
