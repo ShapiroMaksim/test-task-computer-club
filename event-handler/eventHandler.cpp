@@ -105,7 +105,6 @@ void EventHandler::parseInputEvent(const std::string& line) {
 
 void EventHandler::processEvents() {
     std::cout << m_startTime.toString() << "\n";
-    std::cout << "im here \n";
     for (auto& event : m_events) {
         event.print();
         switch (event.m_id) {
