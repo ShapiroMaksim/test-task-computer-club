@@ -122,7 +122,7 @@ public:
 private:
     bool isUInt(const std::string& number);
     int charToInt(const char& c) {
-        return int(c) - 48;
+        return static_cast<int>(c) - 48;
     }
 
     bool checkClientFormat(const std::string& name);
