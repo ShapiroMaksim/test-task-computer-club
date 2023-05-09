@@ -1,15 +1,13 @@
 //Author: Maksim Shapiro
-#include <string>
-#include <iostream>
-#include <stdexcept>
 #include <regex>
 #include <algorithm>
 #include <cmath>
 
 #include "eventHandler.h"
 
-void EventHandler::ParseFile(const std::string& fileName) {
+void EventHandler::parseFile(const std::string& fileName) {
     std::fstream file;
+    file.exceptions ( std::ifstream::badbit );
     file.open(fileName);
     if (file.is_open()) {
         std::string line;
@@ -37,6 +35,8 @@ void EventHandler::ParseFile(const std::string& fileName) {
             file.close();
             throw std::logic_error(line); 
         }
+    } else {
+        throw std::logic_error("Can't open file");
     }
     file.close();
 }
@@ -105,6 +105,7 @@ void EventHandler::parseInputEvent(const std::string& line) {
 
 void EventHandler::processEvents() {
     std::cout << m_startTime.toString() << "\n";
+    std::cout << "im here \n";
     for (auto& event : m_events) {
         event.print();
         switch (event.m_id) {

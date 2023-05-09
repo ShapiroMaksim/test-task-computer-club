@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
     try {
         std::string fileName = std::string(argv[1]);
         EventHandler handler;
-        handler.ParseFile(fileName);
+        handler.parseFile(fileName);
         handler.processEvents();
     } catch (const std::exception& e) {
         std::cout << e.what() << std::endl;

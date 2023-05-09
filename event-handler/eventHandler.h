@@ -117,7 +117,7 @@ class EventHandler {
 public:
     EventHandler() {}
     ~EventHandler() {}
-    void ParseFile(const std::string& fileName);
+    void parseFile(const std::string& fileName);
     void processEvents();
 private:
     bool isUInt(const std::string& number);
